@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Game</title>
+    <script src="game.js"></script>
+    <link rel="stylesheet" href="stylegame.css">
+    <audio controls>
+        <source src="music_fx_driving_beat_with_jazzy_funky_tune_to_move_yo.mp3" type="audio/mp3">
+      </audio>
+</head>
+<body>
+    <!--this is ths page header-->
+    <h1>Welcome, lets play a craps game </h1>
+    <nav>
+        <h2>
+            Teleportation
+        </h2>
+        <a href="./index.html">
+            Main
+        </a><br>
+        <a href="./boards.html">
+            Boards
+        </a><br>
+        <a href="./Strings.html">
+            Strings
+        </a><br>
+    </nav>
+    <!--this starts the game-->
+    <button onclick="playCraps();">Play Craps</button>
+    <!--this shows results-->
+    <div id="crapsRes">Crap Result</div>
+    <!--this die 1 Result-->
+    <div id="die1Res">die 1 Result</div>
+    <!--this shows die 2 Result-->
+    <div id="die2Res">die 2  Result</div>
+    <!--this shows Sum Result-->
+    <div id="sumRes">sum Result</div>
+
+<br>
+<br>
+<br>
+<br>
+    <h1>Palindrome Checker</h1>
+    <p>Enter a word and check if it is a palindrome:</p>
+    <input type="text" id="inputString">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function isPalindrome(str) {
+            let len = str.length;
+            let mid = Math.floor(len/2);
+            for (let i = 0; i < mid; i++) {
+                if (str[i] !== str[len - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function checkPalindrome() {
+            let inputString = document.getElementById("inputString").value;
+            if (isPalindrome(inputString)) {
+                document.getElementById("result").innerHTML = `${inputString} is a palindrome.`;
+            } else {
+                document.getElementById("result").innerHTML = `${inputString} is not a palindrome.`;
+            }
+        }
+    </script>
+</body>
+</html>
